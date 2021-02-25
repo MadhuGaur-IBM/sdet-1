@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="462d87a0-29e5-42fd-8623-38524df96089" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="https://petstore.swagger.io Test Case 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="462d87a0-29e5-42fd-8623-38524df96089fileName">https%3A%2F%2Fpetstore.swagger.io-Test-Case-1</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Login" id="b4690c57-392f-4eef-9002-78dd8ac564f7">
+    <con:settings/>
+    <con:config service="https://petstore.swagger.io" resourcePath="/v2/user/login" methodName="login" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Login" id="d30aff82-c76f-4053-94d9-8f8ebb267b80" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/user/login</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d5015fb8-f7fc-46b8-b399-62979b935ada" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="6f37c720-76cd-4574-ad29-6762b0f487cd" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="password" value="testuser"/>
+          <con:entry key="username" value="testuser"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>username</con:entry>
+          <con:entry>password</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetUserName" id="3e272692-7241-45a6-940c-ebbf535d80ac">
+    <con:settings/>
+    <con:config service="https://petstore.swagger.io" resourcePath="/v2/user/testuser" methodName="GetUsername" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetUserName" id="700571ef-7c99-4f76-a7b5-33ee902ce37c" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/user/testuser</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="b0e12a68-6c88-4953-90c5-7f865cb5ddb3" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="60e07efc-a063-4666-9b25-717e0573a42e" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="username" value="testuser"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>username</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="UserCreation" id="9b704392-8384-4d50-abb7-2627d4823d01">
+    <con:settings/>
+    <con:config service="https://petstore.swagger.io" resourcePath="/v2/user/" methodName="UserCreation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="UserCreation" id="9f909052-9a2e-4d42-a2ca-897aa162b0f6" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://petstore.swagger.io</con:endpoint>
+        <con:request>{
+  "id": 1,
+  "username": "testuser",
+  "firstName": "madhu",
+  "lastName": "gaur",
+  "email": "MadhuGaur@test.com",
+  "password": "testuser",
+  "phone": "81900000000",
+  "userStatus": 1
+}</con:request>
+        <con:originalUri>https://petstore.swagger.io/v2/user/</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="755306b2-0c89-410b-b928-a7509cc91d26" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="1b0d8911-5dd0-436f-a1ba-3c5239268fb8" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="DeleteUser" id="0305e88b-bdf9-4cfc-8ff2-00c7fec97ebc">
+    <con:settings/>
+    <con:config service="https://petstore.swagger.io" resourcePath="/v2/user/testuser" methodName="DeleteUser" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="DeleteUser" id="57d67d6f-b9cc-48f1-a429-d9a90dd6d0e0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/user/user</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="84e32519-6779-4577-aae6-5e54b215c58a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="8419ad4a-534a-4e6a-b7ff-27ee244999f4" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="username" value="testuser"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>username</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

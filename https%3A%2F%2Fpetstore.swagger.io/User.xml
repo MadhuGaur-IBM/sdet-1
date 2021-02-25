@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="User" path="/v2/user/" id="1216fc58-a38d-49e8-8a69-e3261dd77cb6" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="1216fc58-a38d-49e8-8a69-e3261dd77cb6fileName">User</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="UserCreation" id="27e9fffc-d162-4e28-a8ea-31c449f40e26" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>405 400</con:status>
+      <con:params/>
+      <con:element xmlns:user="https://petstore.swagger.io/v2/user/">user:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:user="https://petstore.swagger.io/v2/user/">user:Response</con:element>
+    </con:representation>
+    <con:request name="Request 1" id="9f909052-9a2e-4d42-a2ca-897aa162b0f6" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://petstore.swagger.io</con:endpoint>
+      <con:request>{
+  "id": 1,
+  "username": "testuser",
+  "firstName": "madhu",
+  "lastName": "gaur",
+  "email": "MadhuGaur@test.com",
+  "password": "testuser",
+  "phone": "81900000000",
+  "userStatus": 1
+}</con:request>
+      <con:originalUri>https://petstore.swagger.io/v2/user/</con:originalUri>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>
